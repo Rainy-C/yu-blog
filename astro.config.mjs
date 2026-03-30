@@ -38,6 +38,10 @@ export default defineConfig({
 
 	output: "static",
 
+	preview: {
+		allowedHosts: ["*"],
+	},
+
 	integrations: [
 		umami({
 			shareUrl: false,
@@ -177,6 +181,9 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: [tailwindcss()],
+		preview: {
+			allowedHosts: ["*"],
+		},
 		build: {
 			// 静态资源处理优化，防止小图片转 base64 导致 HTML 体积过大
 			assetsInlineLimit: 4096,
